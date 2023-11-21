@@ -22,7 +22,7 @@ const CategoryList = () => {
                 </Link>
                 <Link
                     href="/blog?cat=style"
-                    className={`${styles.category} ${styles.style}`}
+                    className={`${styles.category} ${styles.fashion}`}
                 >
                     <Image
                         src={"/fashion.png"}
@@ -35,7 +35,7 @@ const CategoryList = () => {
                 </Link>
                 <Link
                     href="/blog?cat=style"
-                    className={`${styles.category} ${styles.style}`}
+                    className={`${styles.category} ${styles.food}`}
                 >
                     <Image
                         src={"/food.png"}
@@ -48,7 +48,7 @@ const CategoryList = () => {
                 </Link>
                 <Link
                     href="/blog?cat=style"
-                    className={`${styles.category} ${styles.style}`}
+                    className={`${styles.category} ${styles.travel}`}
                 >
                     <Image
                         src={"/travel.png"}
@@ -61,7 +61,7 @@ const CategoryList = () => {
                 </Link>
                 <Link
                     href="/blog?cat=style"
-                    className={`${styles.category} ${styles.style}`}
+                    className={`${styles.category} ${styles.culture}`}
                 >
                     <Image
                         src={"/culture.png"}
@@ -74,7 +74,7 @@ const CategoryList = () => {
                 </Link>
                 <Link
                     href="/blog?cat=style"
-                    className={`${styles.category} ${styles.style}`}
+                    className={`${styles.category} ${styles.coding}`}
                 >
                     <Image
                         src={"/coding.png"}
