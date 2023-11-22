@@ -4,7 +4,7 @@ import styles from "./authLinks.module.css"
 import { useState } from "react";
 
 const AuthLinks = () => {
-    const status = "noauthenticated"
+    const status = "authenticated"
 
     const [open, setOpen] = useState(false);
     return (
