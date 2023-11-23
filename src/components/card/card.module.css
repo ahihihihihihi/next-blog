@@ -5,6 +5,10 @@
     gap          : 50px;
 }
 
+.title {
+    text-transform: uppercase;
+}
+
 .imageContainer {
     flex    : 1;
     height  : 350px;
@@ -27,8 +31,9 @@
 }
 
 .category {
-    color      : crimson;
-    font-weight: 500;
+    color         : crimson;
+    font-weight   : 500;
+    text-transform: uppercase;
 }
 
 .desc {
