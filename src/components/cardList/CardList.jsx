@@ -1,9 +1,10 @@
+
 import Card from "../card/Card";
 import Pagination from "../pagination/Pagination";
 import styles from "./cardList.module.css"
 
-const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/posts", {
+const getData = async (page) => {
+    const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
         cache: "no-store",
     });
 
@@ -14,17 +15,30 @@ const getData = async () => {
     return res.json();
 };
 
-const CardList = async () => {
-    const data = await getData();
+const CardList = async ({ page }) => {
+    const data = await getData(page);
+    // console.log(">>>check data: ", data)
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Recent Posts</h1>
             <div className={styles.posts}>
-                <Card />
-                <Card />
-                <Card />
+                {
+                    data && data.length &&
+                    data?.map((item) => {
+                        return (
+                            <>
+                                <Card
+                                    key={item._id}
+                                    item={item}
+                                />
+                            </>
+                        )
+                    })
+                }
             </div>
-            <Pagination />
+            <Pagination
+                page={page}
+            />
         </div>
     );
 };
