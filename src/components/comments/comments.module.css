@@ -19,6 +19,10 @@
     width  : 100%;
 }
 
+.login {
+    border-bottom: 1px dotted var(--softTextColor);
+}
+
 .button {
     padding         : 16px 20px;
     background-color: teal;

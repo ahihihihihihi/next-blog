@@ -52,7 +52,9 @@ const SinglePage = async ({ params }) => {
                         />
                     }
                     <div className={styles.comment}>
-                        <Comments />
+                        <Comments
+                            postSlug={slug}
+                        />
                     </div>
                 </div>
                 <Menu />
