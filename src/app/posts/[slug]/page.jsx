@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Menu from '@/components/Menu/Menu';
 
 const getData = async (slug) => {
-    const res = await fetch(`/api/posts/${slug}`, {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${slug}`, {
         cache: "no-store",
     });
     // console.log(">>>check res: ", res)
