@@ -84,8 +84,8 @@ const WritePage = () => {
             }),
         });
 
-        console.log(">>>check res:", res)
-        return
+        // console.log(">>>check res:", res)
+
         if (res.status === 200) {
             const data = await res.json();
             router.push(`/posts/${data.slug}`);
@@ -108,14 +108,17 @@ const WritePage = () => {
                 className={styles.input}
                 onChange={(e) => setTitle(e.target.value)}
             />
-            <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
-                <option value="style">style</option>
-                <option value="fashion">fashion</option>
-                <option value="food">food</option>
-                <option value="culture">culture</option>
-                <option value="travel">travel</option>
-                <option value="coding">coding</option>
-            </select>
+            <label>
+                Category:
+                <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
+                    <option value="style">style</option>
+                    <option value="fashion">fashion</option>
+                    <option value="food">food</option>
+                    <option value="culture">culture</option>
+                    <option value="travel">travel</option>
+                    <option value="coding">coding</option>
+                </select>
+            </label>
             <div className={styles.editor}>
                 <button className={styles.button} onClick={() => setOpen(!open)}>
                     <Image src="/plus.png" alt="" width={16} height={16} />

@@ -36,10 +36,13 @@ const Comments = ({ postSlug }) => {
             method: "POST",
             body: JSON.stringify({ desc, postSlug }),
         });
+        setDesc("")
         mutate();
     };
+    // console.log("check data", data)
 
     return (
+
         <div className={styles.container}>
             <h1 className={styles.title}>Comments</h1>
             {status === "authenticated" ?
@@ -47,6 +50,7 @@ const Comments = ({ postSlug }) => {
                     <textarea
                         placeholder="write a comment..."
                         className={styles.input}
+                        value={desc}
                         onChange={(e) => setDesc(e.target.value)}
                     />
                     <button
@@ -62,8 +66,8 @@ const Comments = ({ postSlug }) => {
                 {isLoading ?
                     "loading..."
                     :
-                    data?.map((item) => (
-                        <div className={styles.comment}>
+                    data && data.length > 0 && data?.map((item) => (
+                        <div className={styles.comment} key={item.id}>
                             <div className={styles.user}>
                                 {item?.user?.image && <Image
                                     src={item?.user?.image}
