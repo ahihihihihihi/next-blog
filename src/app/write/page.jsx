@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useState, useEffect } from "react";
 import "react-quill/dist/quill.bubble.css";
-import ReactQuill from "react-quill";
+// import ReactQuill from "react-quill";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import {
@@ -14,6 +14,7 @@ import {
     getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/app/utils/firebase";
+import dynamic from "next/dynamic";
 
 const WritePage = () => {
 
@@ -27,6 +28,8 @@ const WritePage = () => {
     const { status } = useSession();
     // console.log(">>>check data useSession: ", data, " | status: ", status)
     const router = useRouter();
+
+    const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
 
     useEffect(() => {
