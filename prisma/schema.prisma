@@ -3,6 +3,7 @@
 //npx prisma init --datasource-provider mongodb
 //npx prisma generate
 //npx prisma studio
+//
 
 generator client {
   provider = "prisma-client-js"
